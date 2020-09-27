@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hosting | Bachelorscode
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script data-ad-client="ca-pub-7620105396781586" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Varta&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    {{#ifEquals register 'success'}}
+    <script>
+        alert('Dear User Your registration is completed. Please check your mail and verify your email.');
+    </script>
+    {{/ifEquals}}
+    {{#ifEquals register 'exiest'}}
+    <script>
+        alert('Email or username is exist.');
+    </script>
+    {{/ifEquals}}
+    {{#ifEquals register 'invalid'}}
+    <script>
+        alert('Your Email is invalid. Please enter valid email');
+    </script>
+    {{/ifEquals}}
+    {{msg}}
+    {{> header}}
+
+    {{#ifEquals verivication 'failed'}}
+    <script>
+        alert('Dear User you are not able to login. Please Verify your email first');
+    </script>
+    {{/ifEquals}}
+    {{#ifEquals verify 'success'}}
+    <script>
+        alert('Dear User Your email verification is successfully completed');
+    </script>
+    {{/ifEquals}}
+    {{#ifEquals auth 'failed'}}
+    <script>
+        alert('You Should Login First');
+    </script>
+    {{/ifEquals}}
+    {{#ifEquals login 'failed'}}
+    <script>
+        alert('Usernem or password is wrong try again');
+    </script>
+    {{/ifEquals}}
+
+    <!--================Banner======================-->
+    <div class="container-fluid z-depth-1 my-5">
+
+
+        <!--Section: Content-->
+        <section class="dark-grey-text">
+
+            <div class="row pr-lg-5">
+                <div class="col-md-7  mb-5">
+
+                    <div class="view mt-5  ">
+                        <img height="400" src="../static/img/programmer.png" style="padding:10%;" class="img-fluid"
+                            alt="smaple image">
+                    </div>
+
+                </div>
+                <div class="col-md-5 d-flex align-items-center">
+                    <div>
+
+                        <h2 style="font-size: 40px; padding:12px; background-color:#B83227; color:white; text-align:center"><strong>Web
+                                Hosting
+
+                        </h2></br>
+                        <h3><strong>
+                                <span style="color: #3C40C6;">Bachelors</span>
+
+                                <span style="color:black;">Code</span>
+                            </strong></h3>
+
+                        <p style="text-align: justify; font-family: 'Varta', sans-serif; color:black;">We are providig one of the best IT solution in
+                            Patna at very affordable price, BachelorsCode.tech is the leading digital agency
+                            specializing in target driven omni-channel solutions. Our team is a curious mix of
+                            entrepreneurs, designers, path breakers and sports fanatics all having nothing in common
+                            except for zeal and love towards the possibilities of creating products, services that are
+                            utilized and loved by millions. We digitalize your dreams with our designing skills.</p>
+                        {{#if user}}
+                        <h3>Hello Mr. {{user.name}}</h3>
+                        {{else}}
+                        <a href="" class="btn my-3" style="background-color: #B83227; color:white;" data-toggle="modal"
+                            data-target="#modalLRForm">LogIn/Register</a>
+                        {{/if}}
+
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+    <!--================/Banner=====================-->
+
+
+
+    <!--======================Static=================-->
+    <div class=" py-5 z-depth- text-center text-lg-left">
+
+
+        <!--Section: Content-->
+        <section class="px-md-5 mx-md-5 dark-grey-text">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="card p-4 col-lg-6 mb-4">
+
+
+                    <h3 class="font-weight-bold text-center p-2" style="background-color:#E44236; color:white;font-size:22px;">Free check Web Hosting</h3>
+
+                    <p class="card-body" style="text-align:center; font-weight: 500;">Simplified Cloud Hosting. We are providing Free
+                        cloud hosting for your static website.Make presence on the gloab with our free unlimited hosting
+                        plan.You can Manage your website with our user friendly managment system. <br>
+                       
+
+                    </p> <span style="font-size: 18px; text-align:center;">Happy Coding !!!</span>
+                    <div class="text-center">
+                    <a class="btn  btn-sm ml-0" href="/hosting/static/" role="button" style="font-size: 1rem;
+                    background-color:#B83227; width:40%; color:white; font-weight:500;">Click here<i
+                            class="fa fa-magic ml-2"></i></a>
+                    </div>
+                </div>
+                <!--Grid column-->
+
+               
+                <!--Grid column-->
+                <div  class=" card col-lg-6 p-4  mb-4">
+
+
+                   <h3 class="font-weight-bold text-center p-2" style="background-color:#E44236; color:white;font-size:22px;">Create your Portfolio</h3>
+
+                    <p class="card-body" style="text-align:center; font-weight: 500">
+                        Create your Portfolio in just few clicks. We are providing free services for portfolio design. It will help you in your professional life. You can upload your information on internet in easy way.  
+                    </p>
+
+                </p> <span style="font-size: 18px; text-align:center;">Happy Coding !!!</span>
+                <div class="text-center">
+                    <a class="btn  btn-md ml-0" href="/hosting/static/portfolio/list" role="button" style="font-size: 1rem; width:40%; background-color:#B83227; color:white; font-weight: 500">Click here<i
+                            class="fa fa-magic ml-2"></i></a>
+                </div>
+
+
+
+                </div>
+
+            </div>
+            <!--Grid row-->
+
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+    <!--======================/Static=================-->
+
+
+
+    <!--======================Dynamic=================-->
+
+    <!--================/Dynamic==================-->
+    {{>footer}}
+    <!--Section: Content-->
+    <!-- Start of HubSpot Embed Code --> <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8160917.js"></script> <!-- End of HubSpot Embed Code -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</body>
+
+</html>

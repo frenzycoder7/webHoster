@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+        <script data-ad-client="ca-pub-7620105396781586" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </head>
+    <body>
+{{>header}}
+<div class="container my-5 py-5 z-depth text-center text-lg-left">
+                <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 dark-grey-text">
+        {{#ifEquals code 'Design List'}}
+            <div class="text-center">
+                <h3 class="mb-5 mt-4"><b><strong>Templates(Paid/Free)</strong></b></h3>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3">
+                {{#each portfolio}}
+                    <div class="col mb-4">
+                        <!-- Card -->
+                        <div class="card">
+
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img class="card-img-top" src="/static/{{logo}}"
+                                alt="Card image cap">
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                {{#if paid}}
+                                        <div class="mask rgba-white-slight" style="color: black;">Free</div>
+                                {{else}}
+                                        <div class="mask rgba-white-slight" style="color: black;">Free</div>
+                                {{/if}}
+                                <!--Title-->
+                                <h4 class="card-title">{{price}}</h4>
+                                <!--Text-->
+                                <h4><b><strong>{{name}}</strong></b></h4>
+                                <p class="card-text">Uploaded on {{createdAt}}</p>
+                                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                {{#if paid}}
+                                    <button type="button" class="btn btn-light-blue btn-md">Buy Now</button>
+                                {{else}}
+                                    <a href="/hosting/static/portfolio/create/{{_id}}"><button type="button" class="btn btn-light-blue btn-md">Select</button></a>
+                                {{/if}}
+                                {{!-- <a href="/hosting/static/portfolio/preview/{{_id}}"><button type="button" class="btn btn-light-blue btn-md">Preview</button></a> --}}
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+                    </div>
+                {{/each}}
+                <div class="text-center">
+                    <a href="/hosting/static/{{user.username}}"><button class="btn btn-success">
+                        Back
+                    </button></a>
+                </div>
+
+            </div>
+        {{/ifEquals}}
+        {{#ifEquals code 'User Information'}}
+            <div class="text-center">
+                <h3 class="mb-5 mt-4"><b><strong>Your Information</strong></b></h3>
+                <small>Dear User this Information is not save in our database this Information is only used for develope static Design for your portfolio by server </small>
+            </div>
+            <div class="btn btn-danger">
+                This website is not allow you to edit information after submission of form
+            </div>
+            <form action="/hosting/static/portfolio/create/{{id}}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Your Name</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="name" placeholder="Your Name" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Your Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" required name="email" aria-describedby="emailHelp" placeholder="Enter email" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Your Number</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="number" placeholder="Your Number" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Your DOB</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" required name="dob" placeholder="Your DOB" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">MARITAL STATUS</label>
+                    <select type="text" class="form-control" id="exampleInputPassword1" required name="status" placeholder="Password" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                        <option>
+                            MARITAL STATUS
+                        </option>
+                        <option>Married</option>
+                        <option>Single</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Work</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="work" placeholder="Your Work" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Your Image</label>
+                    <input type="file" class="form-control" id="exampleInputPassword1" required name="img" placeholder="Your Image" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Somthing About You</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="about" placeholder="Somthing About You" style="background-color: rgb(230,255,220); height:100px; border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Instagram Account Link</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="insta" placeholder="Instagram" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Facebook Account Link</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="facebook" placeholder="Facebook" style="background-color: rgb(230,255,220);  border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Linkedin Account Link</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" required name="linkdin" placeholder="Linkedin" style="background-color: rgb(230,255,220); border-radius: 30px; box-shadow: 10px 10px 15px rgb(192,183,183), -10px -10px 15px white;">
+                </div>
+                <button type="submit" class="btn btn-primary">Save And Generate Your Portfolio</button>
+            </form>
+            <div class="text-center">
+                    <a href="/hosting/static/{{user.username}}"><button class="btn btn-success">
+                        Back
+                    </button></a>
+                </div>
+        {{/ifEquals}}
+
+    </section>
+</div>
+
+{{>footer}}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    </body>
+
+</html>
+
+
